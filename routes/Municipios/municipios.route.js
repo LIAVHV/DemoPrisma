@@ -4,33 +4,33 @@ import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 const router = Router();
 
-router.route('/routes/unidad')
+router.route('/municipios')
     .get(async (req, res) => {
-        const datos = await prisma.directorio.findMany({
-            include: {
-                Municipio: true,
-                Nombramiento: true
-            }
-        });
-        res.json(datos);
+        try {
+            const municipios = await prisma.Municipios.findMany({
+                include: {
+                    Estados: true // Incluir la relación con el estado
+                }
+            });
+            res.json(municipios);
+        } catch (error) {
+            console.error("Error al obtener los municipios:", error);
+            res.status(500).json({ error: "Error interno del servidor" });
+        }
     })
     .post(async (req, res) => {
-        const model = await prisma.directorio.create({
+        const model = await prisma.Municipios.create({
             data: req.body
         });
         res.json(model);
     });
 
-router.route('/directorio/:id')
+router.route('/municipios/:id')
     .get(async (req, res) => {
         const id = parseInt(req.params.id);
-        const datos = await prisma.directorio.findFirst({
+        const datos = await prisma.Municipios.findFirst({
             where: {
-                DirectorioId: id
-            },
-            include: {
-                Municipio: true,
-                Nombramiento: true
+                MunicipiosId: id
             }
         });
 
@@ -43,9 +43,9 @@ router.route('/directorio/:id')
     .put(async (req, res) => {
         const id = parseInt(req.params.id);
 
-        const existingModel = await prisma.directorio.findFirst({
+        const existingModel = await prisma.Municipios.findFirst({
             where: {
-                DirectorioId: id
+                MunicipiosId: id
             }
         });
 
@@ -53,9 +53,9 @@ router.route('/directorio/:id')
             return res.status(404).json({ error: "Record not found" });
         }
 
-        const model = await prisma.directorio.update({
+        const model = await prisma.Municipios.update({
             where: {
-                DirectorioId: id
+                MunicipiosId: id
             },
             data: req.body
         });
@@ -65,9 +65,9 @@ router.route('/directorio/:id')
     .delete(async (req, res) => {
         const id = parseInt(req.params.id);
 
-        const existingModel = await prisma.directorio.findFirst({
+        const existingModel = await prisma.Municipios.findFirst({
             where: {
-                DirectorioId: id
+                MunicipiosId: id
             }
         });
 
@@ -75,9 +75,9 @@ router.route('/directorio/:id')
             return res.status(404).json({ error: "Record not found" });
         }
 
-        const deletedModel = await prisma.directorio.delete({
+        const deletedModel = await prisma.Municipios.delete({
             where: {
-                DirectorioId: id
+                MunicipiosId: id
             }
         });
 

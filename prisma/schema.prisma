@@ -1,0 +1,25 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlserver"
+  url      = env("DATABASE_URL")
+}
+
+model Estados {
+  EstadosId  Int          @id(map: "PK_Estados") @default(autoincrement())
+  Nombre     String       @db.NVarChar(35)
+  Municipios Municipios[]
+}
+
+model Municipios {
+  FkEstadosId  Int
+  MunicipiosId Int
+  Nombre       String? @db.NVarChar(50)
+  Estados      Estados @relation(fields: [FkEstadosId], references: [EstadosId], onUpdate: NoAction, map: "Fk_Mun_FkEstadosId")
+
+  @@id([FkEstadosId, MunicipiosId], map: "PK__Municipi__6BC0DEAEEBF2E9DC")
+}
+
+

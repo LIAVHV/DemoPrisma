@@ -3,12 +3,10 @@
   "version": "1.0.0",
   "description": "Back End que utiliza NodeJS ,Prisma,Base de datos SQL Server 2019",
   "main": "index.js",
-
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon index.js"
-
   },
   "repository": {
     "type": "git",
@@ -23,7 +21,8 @@
   "homepage": "https://github.com/LIAVHV/DemoPrisma#readme",
   "dependencies": {
     "@prisma/client": "^5.14.0",
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "express-validator": "^7.1.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.0"
