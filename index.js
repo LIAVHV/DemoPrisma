@@ -10,4 +10,5 @@ app.use('/api', estados);
 app.use('/api', municipios);
 app.listen(port, () => {
     console.log(`APP LISTENING ON PORT: ${port}`)
+    console.log(`pruebe en su navegador http://localhost:${port}/api/ESTADOS`)
 });
