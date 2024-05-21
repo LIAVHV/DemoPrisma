@@ -35,6 +35,8 @@ Root2024*
 ```
 
 Para probar el proyecto
-- npm install
-- npm run dev
+```
+npm install
+npm run dev
+```
 
