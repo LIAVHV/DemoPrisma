@@ -40,7 +40,8 @@ Trust serve certificate:True
 Server group:<Default>
 ```
 
-# Script SQL
+Script SQL
+
 Conectarse a la base de datos y ejecutar demoPrisma.sql
 
 1. Para probar el proyecto, primero ejecuta el script de SQL, posteriormente los siguientes comandos
