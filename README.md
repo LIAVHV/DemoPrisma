@@ -18,8 +18,7 @@ Instalar docker
 
 https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe
 
-Instalar Azure Data Studio
-https://go.microsoft.com/fwlink/?linkid=2261569
+
 
 Ejecutar en una terminal
 ```
@@ -29,6 +28,11 @@ docker pull mcr.microsoft.com/mssql/server:2019-latest
 ```
 docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Root2024*" -p 1433:1433 --name sql1 --hostname sql1 -d mcr.microsoft.com/mssql/server:2019-latest
 ```
+
+Instalar Azure Data Studio
+
+https://go.microsoft.com/fwlink/?linkid=2261569
+
 Para conectarse desde Azure Data Studio o Sql Server Management Studio
 ```
 Server:localhost
