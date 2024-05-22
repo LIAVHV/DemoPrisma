@@ -41,7 +41,7 @@ Trust serve certificate:True
 Server group:<Default>
 ```
 
-1. Para probar el proyecto, ejecuta el script de creacion de sql base de datos, tablas y datos
+1. Para probar el proyecto, ejecuta el script de SQL
 ```
 npm install
 npx prisma generate
@@ -56,9 +56,11 @@ npm run dev
 ```
 
 Visual Studio Code
+
 https://code.visualstudio.com/download
 
 Extension para probar con Visual Studio Code
+
 [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client)
 
 DENTRO DE VSCODE SELECCIONAR EL GET O POST  DESPUES F1(Rest Client:Send Request)
