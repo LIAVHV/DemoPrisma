@@ -41,42 +41,6 @@ Trust serve certificate:True
 Server group:<Default>
 ```
 
-1. Para probar el proyecto, ejecuta el script de SQL
-```
-npm install
-npx prisma generate
-npm run dev
-```
-
-2. Para probar el proyecto, migrando desde prisma, se crean las tablas vacias
-```
-npm install
-npx prisma migrate dev --name initial
-npm run dev
-```
-
-Visual Studio Code
-
-https://code.visualstudio.com/download
-
-Extension para probar con Visual Studio Code
-
-[REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client)
-
-DENTRO DE VSCODE SELECCIONAR EL GET O POST  DESPUES F1(Rest Client:Send Request)
-```
-GET  http://localhost:3000/api/Estados
-
-###
-
-POST http://localhost:3000/api/Estados
-content-type: application/json
-
-{
-    "Nombre": "sample"
-}
-```
-
 # Script SQL
 Conectarse a la base de datos y ejecutar
 ```
@@ -283,3 +247,42 @@ GO
 ALTER TABLE [Municipios] CHECK CONSTRAINT [Fk_Mun_FkEstadosId]
 GO
 ```
+
+Visual Studio Code
+
+https://code.visualstudio.com/download
+
+Extension para probar con Visual Studio Code
+
+[REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client)
+
+DENTRO DE VSCODE SELECCIONAR EL GET O POST  DESPUES F1(Rest Client:Send Request)
+```
+GET  http://localhost:3000/api/Estados
+
+###
+
+POST http://localhost:3000/api/Estados
+content-type: application/json
+
+{
+    "Nombre": "sample"
+}
+```
+
+
+1. Para probar el proyecto, primero ejecuta el script de SQL, posteriormente los siguientes comandos
+```
+npm install
+npx prisma generate
+npm run dev
+```
+
+2. Para probar el proyecto, migrando desde prisma, se crean las tablas vacias
+```
+npm install
+npx prisma migrate dev --name initial
+npm run dev
+```
+
+
