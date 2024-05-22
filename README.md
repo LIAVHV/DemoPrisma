@@ -19,6 +19,9 @@ Instalar docker
 
 https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe
 
+Instalar Azure Data Studio
+https://go.microsoft.com/fwlink/?linkid=2261569
+
 Ejecutar en una terminal
 ```
 docker pull mcr.microsoft.com/mssql/server:2019-latest
@@ -27,16 +30,40 @@ docker pull mcr.microsoft.com/mssql/server:2019-latest
 ```
 docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Root2024*" -p 1433:1433 --name sql1 --hostname sql1 -d mcr.microsoft.com/mssql/server:2019-latest
 ```
-Para conectarse desde Sql Server Management Studio
+Para conectarse desde Azure Data Studio o Sql Server Management Studio
 ```
-localhost
-sa
-Root2024*
+Server:localhost
+Authentication type:SQL Login
+Username:sa
+Password:Root2024*
+Encrypt:Optional
+Trust serve certificate:True
+Server group:<Default>
 ```
 
 Para probar el proyecto
 ```
 npm install
+npx prisma migrate dev --name initial
 npm run dev
 ```
 
+Visual Studio Code
+https://code.visualstudio.com/download
+
+Extension para probar con Visual Studio Code
+[REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client)
+
+DENTRO DE VSCODE SELECCIONAR EL GET O POST  DESPUES F1(Rest Client:Send Request)
+```
+GET  http://localhost:3000/api/Estados
+
+###
+
+POST http://localhost:3000/api/Estados
+content-type: application/json
+
+{
+    "Nombre": "sample"
+}
+```
