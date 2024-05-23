@@ -1,5 +1,5 @@
 # DemoPrisma
-Back End que utiliza NodeJS,Express,Prisma,Docker, SQL Server 2019
+Back End que utiliza NodeJS,Express,Express-Validator,Prisma,SQL Server Express 2019
 
 PRISMA REQUIERE NODEJS v16.13.0 O SUPERIOR
 
@@ -10,26 +10,15 @@ Paquetes utilizados:
 - @prisma/client
 - express-validator
 
-Para probar el proyecto instalar nodejs
+PARA PROBAR EL PROYECTO INSTALAR NODEJS
 
 https://nodejs.org/dist/v16.20.2/node-v16.20.2-x64.msi
 
-Instalar docker
+INSTALAR SQL SERVER EXPRESS 2019
 
-https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe
+[SQL Server 2019](https://go.microsoft.com/fwlink/?LinkID=866658)
 
-
-
-Ejecutar en una terminal
-```
-docker pull mcr.microsoft.com/mssql/server:2019-latest
-```
-
-```
-docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Root2024*" -p 1433:1433 --name sql1 --hostname sql1 -d mcr.microsoft.com/mssql/server:2019-latest
-```
-
-Instalar Azure Data Studio
+INSTALAR AZURE DATA STUDIO
 
 https://go.microsoft.com/fwlink/?linkid=2261569
 
@@ -63,3 +52,6 @@ npm run dev
 ```
 
 PUEDE PROBAR EL BACK CON POSTMAN O UN CLIENTE REST PARA VISUAL STUDIO CODE
+
+DESDE EL NAVEGADOR
+http://localhost:3000/api/ESTADOS
