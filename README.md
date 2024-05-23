@@ -54,4 +54,4 @@ npm run dev
 PUEDE PROBAR EL BACK CON POSTMAN O UN CLIENTE REST PARA VISUAL STUDIO CODE
 
 DESDE EL NAVEGADOR
-http://localhost:3000/api/ESTADOS
+http://localhost:3000/api/Estados
