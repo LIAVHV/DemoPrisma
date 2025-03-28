@@ -1,8 +1,8 @@
 USE MASTER
 GO
-CREATE DATABASE PRUEBAS
+CREATE DATABASE PRUEBA
 GO
-USE pruebas
+USE prueba
 
 CREATE TABLE Estados(
 	EstadosId int IDENTITY(1,1) CONSTRAINT PK_EstadosId PRIMARY KEY,
@@ -11,7 +11,7 @@ CREATE TABLE Estados(
 
 --LLAVE PRIMARIA COMPUESTA PARA MUNICIPIOS
   CREATE TABLE Municipios(
-	FkEstadosId int NOT NULL,
+	FkEstadosId int NOT NULL CONSTRAINT FK_EstadoId_Municipio FOREIGN KEY REFERENCES Estados(EstadosId),
 	MunicipiosId int NOT NULL,
 	Nombre nvarchar(50) NOT NULL,
     CONSTRAINT FK_Estado_Municipio PRIMARY KEY (FkEstadosId ,MunicipiosId ))
