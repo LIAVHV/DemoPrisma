@@ -20,7 +20,7 @@ INSTALAR SQL SERVER EXPRESS 2019
 
 INSTALAR AZURE DATA STUDIO
 
-https://go.microsoft.com/fwlink/?linkid=2261569
+[AZURE DATA STUDIO](https://learn.microsoft.com/es-es/previous-versions/azure-data-studio/download-azure-data-studio?tabs=win-install%2Cwin-user-install%2Credhat-install%2Cwindows-uninstall%2Credhat-uninstall)
 
 Para conectarse desde Azure Data Studio o Sql Server Management Studio
 ```
